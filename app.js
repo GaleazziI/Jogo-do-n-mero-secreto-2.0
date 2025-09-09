@@ -19,6 +19,12 @@ exibirMensagemInicial();
 function verificarChute() {
     let chute = document.querySelector('input').value;
     
+      if (chute < 1 || chute > 100) {
+        exibirTextoNaTela('p', 'Escolha um número entre 1 e 100');
+        limparCampo();
+        return;
+    }   
+   
     if (chute == numeroSecreto) {
         exibirTextoNaTela('h1', 'Acertou!');
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
